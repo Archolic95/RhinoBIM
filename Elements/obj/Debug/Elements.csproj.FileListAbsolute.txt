@@ -1,0 +1,5 @@
+C:\Users\Archolic\Documents\github\RhinoBIM\Elements\bin\Elements.dll
+C:\Users\Archolic\Documents\github\RhinoBIM\Elements\bin\Elements.pdb
+C:\Users\Archolic\Documents\github\RhinoBIM\Elements\obj\Debug\Elements.csproj.CoreCompileInputs.cache
+C:\Users\Archolic\Documents\github\RhinoBIM\Elements\obj\Debug\Elements.dll
+C:\Users\Archolic\Documents\github\RhinoBIM\Elements\obj\Debug\Elements.pdb
