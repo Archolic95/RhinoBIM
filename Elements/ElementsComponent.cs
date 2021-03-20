@@ -12,6 +12,7 @@ namespace Elements
 {
     public class ElementsComponent : GH_Component
     {
+        public Vector3d unitZ = new Vector3d(0, 0, 1);
         /// <summary>
         /// Each implementation of GH_Component must provide a public 
         /// constructor without any arguments.

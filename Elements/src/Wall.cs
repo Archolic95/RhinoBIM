@@ -2,18 +2,18 @@
 using Rhino.Geometry;
 using System;
 using System.Collections.Generic;
+using Elements.utils;
 
 namespace Elements.src
 {
-    public class Wall : GH_Component
+    public class Wall : ElementsComponent
     {
+        protected override System.Drawing.Bitmap Icon => Properties.Resources.brickwall;
+
         /// <summary>
         /// Initializes a new instance of the MyComponent1 class.
         /// </summary>
         public Wall()
-          : base("Wall", "Nickname",
-              "Description",
-              "Category", "Subcategory")
         {
         }
 
@@ -43,20 +43,25 @@ namespace Elements.src
         /// <param name="DA">The DA object is used to retrieve from inputs and store in outputs.</param>
         protected override void SolveInstance(IGH_DataAccess DA)
         {
+            var defaultRect = new defaultRectangle(100.0, 100.0);
+            var wallCurve = defaultRect.Curve;
 
-        }
+            DA.GetData(0, ref wallCurve);
 
-        /// <summary>
-        /// Provides an Icon for the component.
-        /// </summary>
-        protected override System.Drawing.Bitmap Icon
-        {
-            get
-            {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
-                return Resource.brickwall;
-            }
+            var thickness = 150.0;
+            DA.GetData(1, ref thickness);
+
+            var level = 0.0;
+            DA.GetData(2, ref level);
+
+            var height = 4500.0;
+            DA.GetData(3, ref height);
+
+            var profileSrf = Surface.CreateExtrusion(wallCurve, unitZ * height) as BrepFace;
+
+            var solid = Brep.CreateFromOffsetFace(profileSrf, thickness / 2.0, 0.01, true, true);
+
+            DA.SetData(0, solid);
         }
 
         /// <summary>

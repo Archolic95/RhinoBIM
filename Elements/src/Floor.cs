@@ -8,6 +8,8 @@ namespace Elements.src
 {
     public class Floor : GH_Component
     {
+        protected override System.Drawing.Bitmap Icon => Properties.Resources.wood;
+
         /// <summary>
         /// Initializes a new instance of the MyComponent1 class.
         /// </summary>
@@ -71,19 +73,6 @@ namespace Elements.src
             var output = Brep.CreateSolid(new List<Brep> { startCap, sideSurface, endCap }, 0.01)[0];
 
             DA.SetData(0, output);
-        }
-
-        /// <summary>
-        /// Provides an Icon for the component.
-        /// </summary>
-        protected override System.Drawing.Bitmap Icon
-        {
-            get
-            {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
-                return Resource.wood;
-            }
         }
 
         /// <summary>

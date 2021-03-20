@@ -18,6 +18,8 @@ namespace Elements.src
 
         }
 
+        protected override System.Drawing.Bitmap Icon => Properties.Resources.pillar;
+
         /// <summary>
         /// Registers all the input parameters for this component.
         /// </summary>
@@ -85,19 +87,6 @@ namespace Elements.src
             var output = Brep.CreateSolid(new List<Brep> {startCap, sideSurface, endCap }, 0.01)[0];
 
             DA.SetData(0, output);
-        }
-
-        /// <summary>
-        /// Provides an Icon for the component.
-        /// </summary>
-        protected override System.Drawing.Bitmap Icon
-        {
-            get
-            {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
-                return Resource.pillar;
-            }
         }
 
         /// <summary>

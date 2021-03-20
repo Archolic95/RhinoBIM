@@ -34,6 +34,5 @@ namespace Elements.utils
                 new LineCurve(ptD, ptA)
                 })[0];
         }
-
     }
 }
