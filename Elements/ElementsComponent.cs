@@ -23,7 +23,7 @@ namespace Elements
         public ElementsComponent()
           : base("Elements", "Nickname",
               "Description",
-              "Category", "Subcategory")
+              "RhinoBIM", "Elements")
         {
         }
 

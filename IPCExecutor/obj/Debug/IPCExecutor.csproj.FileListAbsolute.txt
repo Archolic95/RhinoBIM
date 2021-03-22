@@ -1,0 +1,6 @@
+C:\Users\Archolic\Documents\github\RhinoBIM\RhinoBIM\IPCExecutor\bin\Executor.dll
+C:\Users\Archolic\Documents\github\RhinoBIM\RhinoBIM\IPCExecutor\bin\Executor.pdb
+C:\Users\Archolic\Documents\github\RhinoBIM\RhinoBIM\IPCExecutor\obj\Debug\IPCExecutor.csprojAssemblyReference.cache
+C:\Users\Archolic\Documents\github\RhinoBIM\RhinoBIM\IPCExecutor\obj\Debug\IPCExecutor.csproj.CoreCompileInputs.cache
+C:\Users\Archolic\Documents\github\RhinoBIM\RhinoBIM\IPCExecutor\obj\Debug\Executor.dll
+C:\Users\Archolic\Documents\github\RhinoBIM\RhinoBIM\IPCExecutor\obj\Debug\Executor.pdb

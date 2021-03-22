@@ -16,7 +16,7 @@ namespace Elements.src
         public Floor()
           : base("Floors", "Nickname",
               "Description",
-              "Category", "Subcategory")
+              "RhinoBIM", "Elements")
         {
         }
 

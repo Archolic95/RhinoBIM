@@ -13,7 +13,7 @@ namespace Elements.src
         /// </summary>
         public Column() : base("Column", "Nickname",
               "Description",
-              "Category", "Subcategory")
+              "RhinoBIM", "Elements")
         {
 
         }
