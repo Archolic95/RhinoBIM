@@ -13,7 +13,7 @@ namespace Elements.src
         /// <summary>
         /// Initializes a new instance of the MyComponent1 class.
         /// </summary>
-        public Wall() : base("Elements", "Nickname",
+        public Wall() : base("Walls", "Nickname",
               "Description",
               "RhinoBIM", "Elements")
         {
@@ -74,7 +74,7 @@ namespace Elements.src
             var SS = new Line(inStart, outStart).ToNurbsCurve();
             var EE = new Line(inEnd, outEnd).ToNurbsCurve();
 
-            var closed = Curve.JoinCurves(new List<Curve> { inProfile, SS, outProfile, EE })[0];
+            var closed = Curve.JoinCurves(new List<Curve> { inProfile, SS, outProfile, EE })[0] as Curve;
 
             //var baseSrf = Brep.CreatePlanarBreps(closed)[0];
             //var faceBrep = baseSrf.Faces[0];
@@ -84,6 +84,8 @@ namespace Elements.src
             var brepSolid = surfaceSolid.CapPlanarHoles(tolerance);
 
             brepSolid.Translate(new Vector3d(0.0, 0.0, level - 0.0));
+
+            DA.SetData(0, brepSolid);
         }
 
         /// <summary>
