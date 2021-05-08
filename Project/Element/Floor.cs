@@ -8,7 +8,7 @@ namespace GHBIMExecutor.Elements
 {
     public class Floor : ElementsComponent
     {
-        protected override System.Drawing.Bitmap Icon => Properties.Resources.wood;
+        protected override System.Drawing.Bitmap Icon => Properties.Resources.icons_Floor;
 
         /// <summary>
         /// Initializes a new instance of the MyComponent1 class.

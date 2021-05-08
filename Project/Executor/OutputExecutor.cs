@@ -22,7 +22,7 @@ namespace GHBIMExecutor.Executor
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddBrepParameter("Brep", "B", "inputBreps", GH_ParamAccess.item);
+            pManager.AddBrepParameter("Brep", "B", "input Breps", GH_ParamAccess.item);
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace GHBIMExecutor.Executor
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddMeshParameter("Mesh", "M", "output Mesh", GH_ParamAccess.item);
+            pManager.AddBrepParameter("OutBrep", "OB", "output Breps", GH_ParamAccess.item);
         }
 
         /// <summary>
@@ -41,9 +41,20 @@ namespace GHBIMExecutor.Executor
         {
             var inputBrep = new Brep();
             DA.GetData(0, ref inputBrep);
-            var outputMesh = Mesh.CreateFromBrep(inputBrep, new MeshingParameters())[0];
 
-            DA.SetData(0, outputMesh);
+            // Create a parent mesh for combining all meshes
+            //var meshHost = new Mesh();
+            //foreach (var targetBrep in inputBrep) 
+            //{
+            //    var outputMesh = Mesh.CreateFromBrep(targetBrep, new MeshingParameters(1, 1));
+            //    meshHost.Append(outputMesh);
+            //}
+            
+
+            //meshHost.Append(outputMesh);
+            //meshHost.RebuildNormals();
+
+            DA.SetData(0, inputBrep);
         }
 
         /// <summary>
