@@ -66,12 +66,16 @@ namespace GHBIMExecutor.Elements
             var endSection = floorProfile.Duplicate() as Curve;
             endSection.Translate(new Vector3d(0, 0, level+thickness - centroid.Z));
 
-            var startCap = Brep.CreatePlanarBreps(startSection, 0.01)[0];
-            var endCap = Brep.CreatePlanarBreps(endSection, 0.01)[0];
+            //var startCap = Brep.CreatePlanarBreps(startSection, 0.01)[0];
+            //var endCap = Brep.CreatePlanarBreps(endSection, 0.01)[0];
 
-            var output = Brep.CreateSolid(new List<Brep> { startCap, sideSurface, endCap }, 0.01)[0];
+            //var output = Brep.CreateSolid(new List<Brep> { startCap, sideSurface, endCap }, 0.1)[0];
+            //var output = new List<Brep> { startCap, sideSurface, endCap }.ToArray();
 
-            DA.SetData(0, output);
+            var curveExtrusion = Extrusion.Create(startSection, thickness, true);
+
+
+            DA.SetData(0, curveExtrusion);
         }
 
         /// <summary>
