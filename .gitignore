@@ -10,3 +10,4 @@ IPCExecutor\bin
 IPCExecutor\obj
 Elements/obj/Debug/Elements.csprojAssemblyReference.cache
 *.cache
+.vs
